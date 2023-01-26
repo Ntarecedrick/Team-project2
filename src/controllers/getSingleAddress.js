@@ -11,7 +11,14 @@ const getSingleAddress = async (req,res)=>{
             const SingleAddress= await Address.findOne({
                 where:{
                     id: req.params.id
-                }
+                },
+                attributes: ["Province","District","Cell", "Street"],
+                include:[{
+                      model: User,
+                      as: "user",
+                      attributes: ['id', "name","email"]
+                  }]
+               
             })
            return res.status(200).send(SingleAddress)
         }else{
