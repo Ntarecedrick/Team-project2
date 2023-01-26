@@ -8,7 +8,7 @@ import passport from "passport"
 import session from 'express-session'
 import routes from './routes'
 import './config/passport'
-import {} from "dotenv"
+
 const app = express();
 app.use(express.json())
 app.use(session({ secret: 'cats', resave: false, saveUninitialized: true }));
