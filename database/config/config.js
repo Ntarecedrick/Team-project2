@@ -2,7 +2,7 @@ require('dotenv').config()
 
 module.exports = {
   development: {
-    url: process.env.DEV_DATABASE_URL,
+    url: "postgres://postgres:andela123@127.0.0.1:3000/projectDb",
     dialect: 'postgres',
   }
   // test: {
